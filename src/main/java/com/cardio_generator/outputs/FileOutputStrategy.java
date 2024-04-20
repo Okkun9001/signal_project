@@ -7,19 +7,33 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
-//Fixed indentation for the whole file according to Google guidelines (2 spaces)
-public class FileOutputStrategy implements OutputStrategy {  //changed class name to UpperCamelCase
+/** A type of OutputStrategy, saves the outputs to a file. */
+public class FileOutputStrategy implements OutputStrategy {  //changed class name to UpperCamelCase  //Fixed indentation for the whole file according to Google guidelines (2 spaces)
 
   private String baseDirectory; //changed variable name to lowerCamelCase
 
   public final ConcurrentHashMap<String, String> file_map = new ConcurrentHashMap<>();
 
     
-  //changed constructor name to UpperCamelCase
-  public FileOutputStrategy(String baseDirectory){
+  /**
+   * Constructs the output strategy, initializing the 
+   * baseDirectory variable with the given filepath.
+   * 
+   * @param baseDirectory The file path to the directory we want to save our output.
+   */
+  public FileOutputStrategy(String baseDirectory){  //changed constructor name to UpperCamelCase
     this.baseDirectory = baseDirectory; //changed (BaseDirctory) variable name to lowerCamelCase
   }
 
+  /**
+   * This method is defined in the OutputStrategy interface 
+   * and is implemented to save the output data to a file.
+   * In this implementation it creates a new directory at the given path,
+   * if it doesn't already exist and wirtes the data in a file
+   * named after the label parameter.
+   * 
+   * @throws Exception if any errors occur and prints the filePath and the error message.
+   */
   @Override
   public void output(int patientId, long timestamp, String label, String data) {
     try {
