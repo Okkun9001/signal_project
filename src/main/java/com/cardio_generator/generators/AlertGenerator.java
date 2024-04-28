@@ -7,7 +7,7 @@ import com.cardio_generator.outputs.OutputStrategy;
 
 /**
  * This class is responsible for generating alerts for patients, by assigning alertStates to them based on a value generated randomly. 
- * These alert states are later handled by classes that implement the OutoutStrategy interface.
+ * These alert states are later handled by classes that implement the OutputStrategy interface.
  */
 public class AlertGenerator implements PatientDataGenerator {  //Fixed indentation for the whole file according to Google guidelines (2 spaces)
 
